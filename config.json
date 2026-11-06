@@ -1,0 +1,26 @@
+{
+  "tasks": [
+    {
+      "name": "方舟存档",
+      "src_dir": "",
+      "backup_dir": "",
+      "retention": {
+        "mode": "count",
+        "keep_count": 10,
+        "keep_days": 30,
+        "min_keep": 5,
+        "auto_clean": true
+      },
+      "cloud": {
+        "provider": "",
+        "enabled": false,
+        "config": {}
+      }
+    }
+  ],
+  "app": {
+    "theme": "dark",
+    "schedule_enabled": false,
+    "schedule_time": "03:00"
+  }
+}
