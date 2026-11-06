@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  方舟自动备份工具 - WiX MSI 脚本模板
+  用法（需安装 WiX Toolset v3）：
+    candle.exe wix_setup.wxs
+    light.exe wix_setup.wixobj -o dist\\方舟自动备份工具.msi -b dist
+-->
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+    <Product Id="*" Name="方舟自动备份工具" Language="2052"
+             Version="1.0.0" Manufacturer="Ark Backup"
+             UpgradeCode="8A1C2D3E-4F5A-4B6C-9D8E-1F2A3B4C5D6E">
+        <Package InstallerVersion="200" Compressed="yes"
+                 InstallScope="perMachine" Description="方舟存档自动备份工具"/>
+        <MajorUpgrade DowngradeErrorMessage="已安装更高版本，请先卸载。"/>
+        <Media Id="1" Cabinet="app.cab" EmbedCab="yes"/>
+
+        <Directory Id="TARGETDIR" Name="SourceDir">
+            <Directory Id="ProgramFiles64Folder">
+                <Directory Id="INSTALLDIR" Name="方舟自动备份工具"/>
+            </Directory>
+        </Directory>
+
+        <Feature Id="Main" Title="方舟自动备份工具" Level="1">
+            <Component Id="MainExe" Guid="*">
+                <File Id="AppExe" Source="方舟自动备份工具.exe"
+                      KeyPath="yes" DiskId="1"/>
+                <Shortcut Id="StartMenuShortcut"
+                          Directory="ProgramMenuFolder"
+                          Name="方舟自动备份工具" WorkingDirectory="INSTALLDIR"/>
+            </Component>
+        </Feature>
+
+        <UIRef Id="WixUI_Minimal"/>
+    </Product>
+</Wix>
