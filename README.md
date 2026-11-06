@@ -1,4 +1,5 @@
 # 🛠️ 方舟自动备份工具（Win）
+<img width="882" height="732" alt="image" src="https://github.com/user-attachments/assets/37065b12-bead-4a9e-9c13-3425ec91b611" />
 
 > **关于本项目**：本程序由 AI 辅助编写完成，代码经过实际测试可正常使用。
 
